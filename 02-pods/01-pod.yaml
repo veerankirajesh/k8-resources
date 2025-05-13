@@ -5,6 +5,7 @@ metadata:
 spec:   # list of container
   containers:
   - name: hello-pod
+    Namespace: roboshop
     image: nginx # open just information
     ports:
     - containerPort: 80
