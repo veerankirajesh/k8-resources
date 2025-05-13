@@ -1,5 +1,5 @@
 apiVersion: v1
-kind: pod 
+kind: Pod
 metadata:
   name: multi-container-pod
 spec:
@@ -9,5 +9,5 @@ spec:
       ports:
         - containerPort: 80
     - name: almalinux
-      image: almalinu:8
+      image: almalinux:8
       command: ["sleep", "300"]
