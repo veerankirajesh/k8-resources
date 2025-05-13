@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: labels-demo
+  labels:
+   name: rajesh
+   surname: veeranki
+  annotations:
+   its form bommuluru 
+spec:
+  containers:
+    - name: hello-pod
+      image: nginx
+      ports:
+        - containerPort: 80
+    
