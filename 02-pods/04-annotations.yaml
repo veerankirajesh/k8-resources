@@ -6,7 +6,7 @@ metadata:
    name: rajesh
    surname: veeranki
   annotations:
-   its form bommuluru 
+  location: "bommuluru" 
 spec:
   containers:
     - name: hello-pod
