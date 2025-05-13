@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: labels-demo
+  labels:
+   name: rajesh
+   number: 9885850326
+spec:
+  containers:
+    - name: hello-pod
+      image: nginx
+      ports:
+        - containerPort: 80
+    
