@@ -4,17 +4,17 @@ metadata:
   name: hello-pod
 spec:
   containers:
-  - name: hello-pod
-    image: neginx  # line just information
-    ports:
-    - containers: 80
-    resources:
-      requests:
-        cpu: "250m"
-        memory: "64Mi"
-      limits:
-        cpu: "500m"
-        memory: "128Mi"
+    - name: hello-pod
+      image: nginx
+      ports:
+      - containerPort: 80
+      resources:
+        requests:
+          cpu: "250m"
+          memory: "64Mi"
+        limits:
+          cpu: "500m"
+          memory: "128Mi"
         
   
   
