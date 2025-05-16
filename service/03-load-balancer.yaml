@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-load-balancer
+  labels:
+    app: nginx-load-balancer
+    demo: service
+spec:
+  containers:
+  - name: nginx-load-balancer
+    image: nginx
+    ports:
+    - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-load-balancer
+spec:
+  type: LoadBalancer  # Corrected capitalization
+  selector:
+    app: nginx-load-balancer
+    demo: service
+  ports:
+    - protocol: TCP
+      port: 80    # service-port
+      targetPort: 80   # container-port
