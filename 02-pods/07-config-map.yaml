@@ -1,7 +1,7 @@
 apiVersion: v1
-kind: Pod
+kind: ConfigMap
 metadata:
-  name: devops-confi
-daa:
-  name: Devops
-  image: "Rajeshveeranki"
+  name: devops-config
+data:
+  course: DevOps
+  trainer: "Rajeshveeranki"
