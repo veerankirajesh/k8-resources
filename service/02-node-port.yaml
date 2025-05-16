@@ -5,10 +5,10 @@ metadata:
   labels:
     app: nginx-nodeport
     demo: service
-spec:   # list of container
+spec:
   containers:
   - name: nginx-nodeport
-    image: nginx # open just information
+    image: nginx
     ports:
     - containerPort: 80
 ---
@@ -17,7 +17,7 @@ kind: Service
 metadata:
   name: nginx-nodeport
 spec:
-  type: nodeport
+  type: NodePort  # Corrected capitalization
   selector:
     app: nginx-nodeport
     demo: service
