@@ -33,17 +33,17 @@ metadata:
     demo: ebs-static
 spec:
   containers:
-  - name: nginx
-    image: nginx
-    volumeMounts:
-    - name: nginx-data
-      mountPath: /usr/share/nginx/html
-  nodeselector:
-    zone: 1f    
+    - name: nginx
+      image: nginx
+      volumeMounts:
+        - name: nginx-data
+          mountPath: /usr/share/nginx/html
+  nodeSelector:               # ✅ Corrected casing
+    zone: 1f
   volumes:
-  - name: nginx-data
-    persistentVolumeClaim:
-      claimName: ebs-static 
+    - name: nginx-data
+      persistentVolumeClaim:
+        claimName: ebs-static
 ---    
 apiVersion: v1
 kind: Service
