@@ -1,11 +1,12 @@
-apiVersion: storage.k8s.io/v1
 kind: StorageClass
+apiVersion: storage.k8s.io/v1
 metadata:
-  name: ebs-sc-roboshop
-provisioner: ebs.csi.aws.com
-volumeBindingMode: WaitForFirstConsumer
+  name: efs-sc-roboshop
+provisioner: efs.csi.aws.com
 parameters:
-  csi.storage.k8s.io/fstype: xfs
-  type: io1
-  iopsPerGB: "50"
-  encrypted: "true"
+  provisioningMode: efs-ap
+  fileSystemId: fs-038995d660687590f # create manuval elastic file system
+  directoryPerms: "700"
+  gidRangeStart: "1000" # optional
+  gidRangeEnd: "2000" # optional
+  basePath: "/roboshop" # optional
