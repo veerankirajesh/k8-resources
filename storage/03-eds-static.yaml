@@ -11,6 +11,7 @@ spec:
     driver: ebs.csi.aws.com
     fsType: ext4
     volumeHandle: vol-0ae9b7a67ebb3a3c7 # you create manuval volume id
+    
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
