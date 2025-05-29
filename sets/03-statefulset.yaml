@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx # has to match .spec.selector.matchLa
+        app: nginx # has to match .spec.selector.matchLabels
     spec:
       terminationGracePeriodSeconds: 10
       containers:
@@ -29,7 +29,7 @@ spec:
       name: www
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "ebs-sc"
+      storageClassName: "gp2"  # Changed from ebs-sc to gp2
       resources:
         requests:
           storage: 1Gi
@@ -46,4 +46,4 @@ spec:
     name: web
   clusterIP: None
   selector:
-    app: nginx          
+    app: nginx
